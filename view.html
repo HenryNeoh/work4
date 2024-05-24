@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Document</title>
+    <style>
+        body {
+            background-color: #FFE5CC; /* Choose your desired background color */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Viewer</h1>
+    <iframe src="/uploads/{{ filename }}" width="800" height="600"></iframe>
+    <br>
+    <a href="/download/{{ filename }}">Download</a>
+</body>
+</html>

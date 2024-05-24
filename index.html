@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+    <link rel="stylesheet" href="StyleSheet.css">
+    <style>
+        body {
+            background-color: #FFE5CC; /* Choose your desired background color */
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('b.jpg');
+            background-size: cover;
+        }
+
+        .upload-form {
+            margin-top: 50px;
+        }
+
+        #feedback {
+            display: none;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-family: Bernard MT Condensed; text-align: center; color: #FF007F;">Upload Documents</h1>
+    <div class="upload-form">
+        <h2>Upload Your Document here</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file"><br><br>
+            <input type="submit" value="Upload">
+        </form>       
+    </div>
+    <div class="circle" id="circle"></div>
+
+    <script src="JavaScript.js"></script>
+    <script>
+        // Function to submit the form
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            submitForm();
+        });
+
+        function submitForm() {
+            document.querySelector('form').submit();
+            document.getElementById('feedback').style.display = 'block'; // Show feedback message
+        }
+    </script>
+</body>
+</html>
