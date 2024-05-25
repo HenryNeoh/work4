@@ -3,12 +3,16 @@ import os
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = 'UPLOAD_FOLDER'
+UPLOAD_FOLDER = 'uploads'  # Adjust this to your desired upload folder
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Ensure the upload folder exists, create if not
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
 
 @app.route('/')
 def index():
-    return render_template('index.html')####
+    return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -30,4 +34,3 @@ def download_file(filename):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
